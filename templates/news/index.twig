@@ -1,0 +1,20 @@
+{% extends '_layouts/base' %}
+
+{% block page_content %}
+
+
+
+
+ {% paginate craft.entries.section('newsPost').limit(2) as pageInfo, pageEntries %}
+
+    {% for entry in pageEntries %}
+        <article>
+            <h1>{{ entry.title }}</h1>
+            {{ entry.description }}
+        </article>
+    {% endfor %}
+
+    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+
+{% endblock %}

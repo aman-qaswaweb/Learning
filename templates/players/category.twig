@@ -1,0 +1,9 @@
+{# Fetch all entries related to this category #}
+{% set entries = craft.entries()
+.relatedTo(category)
+.all() %}
+
+{# Output them #}
+{% for entry in entries %}
+    <a href="{{ entry.url }}">{{ entry.firstName }}  {{ entry.lastName }}</a><br>
+{% endfor %}

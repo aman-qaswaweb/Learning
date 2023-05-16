@@ -1,0 +1,11 @@
+
+<article>
+    <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+    {% for block in entry.tickets %}
+
+        {{ block.ticketName }}
+        {{ block.price }}<br>
+    {% endfor %}
+
+
+</article>

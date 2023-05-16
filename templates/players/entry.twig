@@ -1,0 +1,25 @@
+<article>
+    <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.firstName}}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.lastName }}</a></h1>
+    <h1><a href="{{ entry.url }}"> {{ entry.dateOfBirth|date('Y-m-d')}}</a></h1>
+
+
+
+    {% set entries = craft.entries()
+    .relatedTo(category)
+    .all() %}
+
+    {# Output them #}
+    {% for entry in entries %}
+        <a href="{{ entry.url }}">{{ entry.title }}</a>
+    {% endfor %}
+
+
+    {% set category = craft.categories()
+    .slug('my-category')
+    .one() %}
+
+
+
+</article>

@@ -1,0 +1,18 @@
+{% extends '_layouts/_default.twig' %}
+    {% set body_classes = "inner-page" %}
+    {% set pageTitle = entry.title %}
+    {% set pageDescription = entry.shortDescription %}
+{% block content %}
+<article class="section">
+    <div class="content-column content-column--narrow">
+
+        <h1 class="centered">{{ entry.title }}</h1>
+
+        {% include 'components/slider.twig' with {
+        photos:entry.photos.all()
+        }
+        %}
+        {{ entry.richText }}
+    </div>
+</article>
+{% endblock %}

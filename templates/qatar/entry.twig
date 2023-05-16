@@ -1,0 +1,17 @@
+<article>
+    <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.description }}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.categories.title}}</a></h1>
+
+    {% for categories in entry.categories %}
+        {{ categories.title }}
+    {% endfor %}
+
+
+    {% set rel = entry.Photo.one() %}
+    {% if rel %}
+
+        <img src="{{ rel.url }}">
+    {% endif %}
+</article>
+

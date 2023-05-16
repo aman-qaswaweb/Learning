@@ -1,0 +1,43 @@
+{#{% set homePageList = entry.homePageList.all() %}#}
+{#{% if homePageList|length %}#}
+{#    <h3>Relation</h3>#}
+
+{#    <ul>#}
+{#        {% for homePageList in homePageList %}#}
+
+{#            <li>{{ homePageList.title }}<br><br><br></li>#}
+{#           #}
+
+{#              {% endfor %}#}
+{#{% block page_content %}#}
+{#<section class="services"  data-aos="fade-up">#}
+{#    <div class="container">#}
+{#        <div class="services-content">#}
+{#            <h2>Products & Services</h2>#}
+{#            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ipsum justo, bibendum eget auctor eget, tincidunt nec ligula. Suspendisse aliquet est erat, eget consequat ligula scelerisque quis. Vestibulum mattis massa tempor sem placerat tincidunt. Suspendisse consequat dolor ut viverra condimentum. Phasellus sit amet consequat sapien. Suspendisse potenti. Donec in gravida velit. Cras vulputate, velit ut gravida tristique, eros sem porttitor diam, quis commodo felis odio ac augue.</p>#}
+{#        </div>#}
+{#        #}{# Pull in the four latest products entries #}
+{#        {% for productsEntry in craft.entries.section('products').limit(4).all() %}#}
+{#        <div class="services-list">#}
+{#            <a href="{{ productsEntry.url }}" title="{{ productsEntry.title }}" class="services-list-item is-blue">#}
+{#                {% set image = productsEntry.iconImg.one() %}#}
+{#                <figure class="services-list-img">#}
+{#                    {% if image %}#}
+{#                    <span class="services-list-img-shape"><img src="{{ image.url }}" alt="{{ image.title }}"></span>#}
+{#                    {% endif %}#}
+{#                </figure>#}
+{#                <div class="services-list-content">#}
+{#                    <h3>{{ productsEntry.title }}</h3>#}
+{#                    <p>{{ productsEntry.shortDescription }}</p>#}
+{#                </div>#}
+{#                <span class="services-list-arrow">#}
+{#                  <img src="images/arrow.svg" alt="{{ productsEntry.title }}">#}
+{#                </span>#}
+{#            </a>#}
+{#        </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{#</section>#}
+
+{#{% endblock %}#}
+

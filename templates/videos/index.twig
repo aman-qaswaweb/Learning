@@ -1,0 +1,31 @@
+{% extends '_layouts/base' %}
+
+{% block page_content %}
+
+
+
+
+    {% paginate craft.entries.section('videosPost').limit(2) as pageInfo, pageEntries %}
+
+    {% for entry in pageEntries %}
+        <article>
+            <h1>{{ entry.title }}</h1>
+            {{ entry.description }}
+
+
+
+            {% set relatedCategories = entry.videos.all() %}
+            {% if relatedCategories|length %}
+                <ul>
+                    {% for rel in relatedCategories %}
+                        <li><a href="{{ rel.url }}">{{ rel.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </article>
+    {% endfor %}
+
+    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{#{% extends '_layouts/base.twig' %}#}
+
+
+{#{% block page_content %}#}
+
+{#    {% set field = craft.app.fields.getFieldByHandle('xender') %}#}
+
+{#    <ul>#}
+{#        {% for option in field.options %}#}
+{#            {% set selected = entry is defined#}
+{#                ? entry.xender.value == option.value#}
+{#                : option.default %}#}
+
+{#            <li><label>#}
+{#                    <input type="radio"#}
+{#                           name="fields[xender]"#}
+{#                           value="{{ option.value }}"#}
+{#                            {% if selected %} checked{% endif %}#}
+{#                    >#}
+{#                    {{ option.label }}#}
+{#                </label></li>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+
+
+        <style>
+            body{
+                background-color: {{ entry.bgColor }};
+            }
+            .center {
+                color: {{ entry.textColor }};
+            }
+            .center{
+                color: {{ entry.textColor}};
+            }
+        </style>
+
+
+
+ <body>
+ <h1 class ="center ">How are you</h1>
+ <p class =" center ">I am Fine</p>
+ </body>
+
+

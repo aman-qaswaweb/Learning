@@ -1,0 +1,28 @@
+{% block page_content %}
+<section class="enterprises" data-aos="fade-up"  data-aos-delay="300">
+    <div class="container">
+        <h2>{{ entry.title }}</h2>
+        <div class="enterprises-wrap d-flex flex-wrap">
+            {% set blocks = entry.contentBlock.all() %}
+            {% if blocks|length %}
+            {% for block in blocks %}
+            <div class="enterprises-list d-flex">
+                {% set image = block.photo.one %}
+                <img src="{{ image.getUrl }}" alt="{{ image.title }}">
+                <div class="enterprises-list-content">
+                    <h2>{{ block.heading }}</h2>
+                    <p>{{ block.description }}</p>
+                    <a href="#" title="Know More">Know More <i class="fa  fa-arrow-right"></i></a>
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+    {% set Pdf = entry.pdfFile.one() %}
+    <a href="{{ Pdf.url }}">DOWNLOUD PDF</a>
+
+
+{% endblock %}

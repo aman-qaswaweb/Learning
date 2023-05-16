@@ -1,0 +1,32 @@
+{% extends '_layouts/base.twig' %}
+
+
+{% block page_content %}
+    {# Create an entry query with the 'section' and 'limit' parameters #}
+
+    {% set myEntryQuery = craft.entries.section('enterprises').limit(5) %}
+
+
+
+    {# Fetch the entries #}
+
+    {% set Entries = myEntryQuery.all() %}
+
+
+    {# Display the entries #}
+   {% for entry in Entries %}
+
+    <article>
+        <h1>{{ entry.title }} </h1>
+       <h4> {{ entry.summary }}</h4>
+        <h1><a href="{{entry.url}}">Read More</a> </h1>
+
+    </article>
+  {% endfor %}
+
+
+
+
+
+
+{% endblock %}

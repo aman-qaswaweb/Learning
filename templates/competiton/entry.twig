@@ -1,0 +1,17 @@
+<article>
+    <h1><a href="{{ entry.url }}">{{ entry.title }}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.description }}</a></h1>
+    <h1><a href="{{ entry.url }}">{{ entry.cometitons.title}}</a></h1>
+
+    {% for cometitons in entry.cometitons %}
+        {{ cometitons.title }}
+    {% endfor %}
+
+
+    {% set rel = entry.Photo.one() %}
+    {% if rel %}
+
+        <img src="{{ rel.url }}">
+    {% endif %}
+</article>
+
